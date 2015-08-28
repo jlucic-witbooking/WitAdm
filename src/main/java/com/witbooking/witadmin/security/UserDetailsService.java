@@ -39,6 +39,7 @@ public class UserDetailsService implements org.springframework.security.core.use
         } else if (!userFromDatabase.getActivated()) {
             throw new UserNotActivatedException("User " + lowercaseLogin + " was not activated");
         }
+        /*TODO: GET PERMISSIONS FROM GROUPS! */
 
         Collection<GrantedAuthority> grantedAuthorities = new ArrayList<>();
         for (AuthorizedEstablishmentUser authorizedEstablishmentUser : userFromDatabase.getAuthorizedEstablishmentUsers()) {
