@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+   <changeSet author="mongoose (generated)" id="1428314915333-1">
+      <createTable tableName="AUTHORITY_PERMISSION">
+         <column name="authority_name" type="VARCHAR(50)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="permission_id" type="BIGINT">
+            <constraints nullable="false"/>
+         </column>
+      </createTable>
+   </changeSet>
+   <changeSet author="mongoose (generated)" id="1428314915333-4">
+      <addPrimaryKey columnNames="authority_name, permission_id" tableName="AUTHORITY_PERMISSION"/>
+   </changeSet>
+   <changeSet author="mongoose (generated)" id="1428314915333-7">
+      <addForeignKeyConstraint baseColumnNames="permission_id"
+                               baseTableName="AUTHORITY_PERMISSION"
+                               constraintName="FK_af45q8ptgv6cd6ardnppnxrcm"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="PERMISSION"/>
+   </changeSet>
+   <changeSet author="mongoose (generated)" id="1428314915333-8">
+      <addForeignKeyConstraint baseColumnNames="authority_name"
+                               baseTableName="AUTHORITY_PERMISSION"
+                               constraintName="FK_m2f0eo2cx0wnklvlbpj0l3lu4"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="name"
+                               referencedTableName="JHI_AUTHORITY"/>
+   </changeSet>
+   <changeSet author="mongoose (generated)" id="1428314915333-9">
+      <dropForeignKeyConstraint baseTableName="JHI_USER_AUTHORITY" constraintName="fk_authority_name"/>
+   </changeSet>
+   <changeSet author="mongoose (generated)" id="1428314915333-10">
+      <dropForeignKeyConstraint baseTableName="JHI_USER_AUTHORITY" constraintName="fk_user_id"/>
+   </changeSet>
+   <changeSet author="mongoose (generated)" id="1428314915333-11">
+      <dropTable tableName="JHI_USER_AUTHORITY"/>
+   </changeSet>
+    <changeSet author="mongoose (generated)" id="1428314915333-12">
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/bookingengine.csv"
+                  separator=";"
+                  tableName="BOOKINGENGINE"/>
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/permissions.csv"
+                  separator=";"
+                  tableName="PERMISSION"/>
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/authorities_permissions.csv"
+                  separator=";"
+                  tableName="AUTHORITY_PERMISSION"/>
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/authorized_establishment_user.csv"
+                  separator=";"
+                  tableName="AUTHORIZEDESTABLISHMENTUSER"/>
+    </changeSet>
+
+</databaseChangeLog>

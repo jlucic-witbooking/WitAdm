@@ -1,0 +1,96 @@
+<div>
+
+    <h2 translate="witadminApp.frontEndMessage.home.title">FrontEndMessages</h2>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" ui-sref="frontEndMessage.new">
+                    <span class="glyphicon glyphicon-flash"></span> <span translate="witadminApp.frontEndMessage.home.createLabel">Create a new FrontEndMessage</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteFrontEndMessageConfirmation">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="deleteForm" ng-submit="confirmDelete(frontEndMessage.id)">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" translate="entity.delete.title">Confirm delete operation</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p translate="witadminApp.frontEndMessage.delete.question" translate-values="{id: '{{frontEndMessage.id}}'}">Are you sure you want to delete this FrontEndMessage?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="deleteForm.$invalid" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="global.field.id">ID</th>
+                    <th translate="witadminApp.frontEndMessage.username">Username</th>
+                    <th translate="witadminApp.frontEndMessage.editedName">EditedName</th>
+                    <th translate="witadminApp.frontEndMessage.description">Description</th>
+                    <th translate="witadminApp.frontEndMessage.title">Title</th>
+                    <th translate="witadminApp.frontEndMessage.position">Position</th>
+                    <th translate="witadminApp.frontEndMessage.type">Type</th>
+                    <th translate="witadminApp.frontEndMessage.hidden">Hidden</th>
+                    <th translate="witadminApp.frontEndMessage.unavailable">Unavailable</th>
+                    <th translate="witadminApp.frontEndMessage.start">Start</th>
+                    <th translate="witadminApp.frontEndMessage.end">End</th>
+                    <th translate="witadminApp.frontEndMessage.creation">Creation</th>
+                    <th translate="witadminApp.frontEndMessage.lastModification">LastModification</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll="loadPage(page + 1)" infinite-scroll-disabled="links['last'] == page">
+                <tr ng-repeat="frontEndMessage in frontEndMessages">
+                    <td><a ui-sref="frontEndMessage.detail({id:frontEndMessage.id})">{{frontEndMessage.id}}</a></td>
+                    <td>{{frontEndMessage.username}}</td>
+                    <td>{{frontEndMessage.editedName}}</td>
+                    <td>{{frontEndMessage.description}}</td>
+                    <td>{{frontEndMessage.title}}</td>
+                    <td>{{frontEndMessage.position}}</td>
+                    <td>{{frontEndMessage.type}}</td>
+                    <td>{{frontEndMessage.hidden}}</td>
+                    <td>{{frontEndMessage.unavailable}}</td>
+                    <td>{{frontEndMessage.start}}</td>
+                    <td>{{frontEndMessage.end}}</td>
+                    <td>{{frontEndMessage.creation}}</td>
+                    <td>{{frontEndMessage.lastModification}}</td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="frontEndMessage.detail({id:frontEndMessage.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="frontEndMessage.edit({id:frontEndMessage.id})"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="delete(frontEndMessage.id)"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

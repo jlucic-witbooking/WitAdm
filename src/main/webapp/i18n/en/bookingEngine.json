@@ -1,0 +1,22 @@
+{
+    "witadminApp": {
+        "bookingEngine" : {
+            "home": {
+                "title": "BookingEngines",
+                "createLabel": "Create a new BookingEngine",
+                "createOrEditLabel": "Create or edit a BookingEngine"
+            },
+            "created": "A new BookingEngine is created with identifier {{ param }}",
+            "updated": "A BookingEngine is updated with identifier {{ param }}",
+            "deleted": "A BookingEngine is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete BookingEngine {{ id }}?"
+            },
+            "detail": {
+                "title": "BookingEngine"
+            },
+            "ticker": "Ticker",
+            "name": "Name"
+        }
+    }
+}

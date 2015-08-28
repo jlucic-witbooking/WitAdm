@@ -1,0 +1,148 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myFrontEndMessageLabel" translate="witadminApp.frontEndMessage.home.createOrEditLabel">Create or edit a FrontEndMessage</h4>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="frontEndMessage.id" readonly>
+        </div>
+
+        <div class="form-group">
+            <label translate="witadminApp.frontEndMessage.username" for="field_username">Username</label>
+            <input type="text" class="form-control" name="username" id="field_username"
+                    ng-model="frontEndMessage.username"
+                    required ng-maxlength="90">
+
+            <div ng-show="editForm.username.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.username.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.username.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="90">
+                    This field cannot be longer than 90 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="witadminApp.frontEndMessage.editedName" for="field_editedName">EditedName</label>
+            <input type="text" class="form-control" name="editedName" id="field_editedName"
+                    ng-model="frontEndMessage.editedName"
+                    required ng-maxlength="90">
+
+            <div ng-show="editForm.editedName.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.editedName.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.editedName.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="90">
+                    This field cannot be longer than 90 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="witadminApp.frontEndMessage.description" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                    ng-model="frontEndMessage.description"
+                    >
+
+        </div>
+        <div class="form-group">
+            <label translate="witadminApp.frontEndMessage.title" for="field_title">Title</label>
+            <input type="text" class="form-control" name="title" id="field_title"
+                    ng-model="frontEndMessage.title"
+                    ng-maxlength="100">
+
+            <div ng-show="editForm.title.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.title.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="100">
+                    This field cannot be longer than 100 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="witadminApp.frontEndMessage.position" for="field_position">Position</label>
+            <input type="text" class="form-control" name="position" id="field_position"
+                    ng-model="frontEndMessage.position"
+                    ng-maxlength="100">
+
+            <div ng-show="editForm.position.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.position.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="100">
+                    This field cannot be longer than 100 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="witadminApp.frontEndMessage.type" for="field_type">Type</label>
+            <input type="text" class="form-control" name="type" id="field_type"
+                    ng-model="frontEndMessage.type"
+                    ng-maxlength="7">
+
+            <div ng-show="editForm.type.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.type.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="7">
+                    This field cannot be longer than 7 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="witadminApp.frontEndMessage.hidden" for="field_hidden">Hidden</label>
+            <input type="checkbox" class="form-control" name="hidden" id="field_hidden"
+                    ng-model="frontEndMessage.hidden"
+                    >
+
+        </div>
+        <div class="form-group">
+            <label translate="witadminApp.frontEndMessage.unavailable" for="field_unavailable">Unavailable</label>
+            <input type="checkbox" class="form-control" name="unavailable" id="field_unavailable"
+                    ng-model="frontEndMessage.unavailable"
+                    >
+
+        </div>
+        <div class="form-group">
+            <label translate="witadminApp.frontEndMessage.start" for="field_start">Start</label>
+            <input type="datetime-local" class="form-control" name="start" id="field_start"
+                    ng-model="frontEndMessage.start" ng-model-options="{timezone: 'UTC'}"
+                    >
+
+        </div>
+        <div class="form-group">
+            <label translate="witadminApp.frontEndMessage.end" for="field_end">End</label>
+            <input type="datetime-local" class="form-control" name="end" id="field_end"
+                    ng-model="frontEndMessage.end" ng-model-options="{timezone: 'UTC'}"
+                    >
+
+        </div>
+        <div class="form-group">
+            <label translate="witadminApp.frontEndMessage.creation" for="field_creation">Creation</label>
+            <input type="datetime-local" class="form-control" name="creation" id="field_creation"
+                    ng-model="frontEndMessage.creation" ng-model-options="{timezone: 'UTC'}"
+                    >
+
+        </div>
+        <div class="form-group">
+            <label translate="witadminApp.frontEndMessage.lastModification" for="field_lastModification">LastModification</label>
+            <input type="datetime-local" class="form-control" name="lastModification" id="field_lastModification"
+                    ng-model="frontEndMessage.lastModification" ng-model-options="{timezone: 'UTC'}"
+                    >
+
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || editForm.$submitted" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

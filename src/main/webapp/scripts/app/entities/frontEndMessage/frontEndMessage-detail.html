@@ -1,0 +1,118 @@
+
+<div>
+    <h2><span translate="witadminApp.frontEndMessage.detail.title">FrontEndMessage</span> {{frontEndMessage.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="witadminApp.frontEndMessage.username">Username</span>
+                </td>
+                <td>
+                    <input type="text" class="input-sm form-control" value="{{frontEndMessage.username}}" readonly>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="witadminApp.frontEndMessage.editedName">EditedName</span>
+                </td>
+                <td>
+                    <input type="text" class="input-sm form-control" value="{{frontEndMessage.editedName}}" readonly>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="witadminApp.frontEndMessage.description">Description</span>
+                </td>
+                <td>
+                    <input type="text" class="input-sm form-control" value="{{frontEndMessage.description}}" readonly>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="witadminApp.frontEndMessage.title">Title</span>
+                </td>
+                <td>
+                    <input type="text" class="input-sm form-control" value="{{frontEndMessage.title}}" readonly>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="witadminApp.frontEndMessage.position">Position</span>
+                </td>
+                <td>
+                    <input type="text" class="input-sm form-control" value="{{frontEndMessage.position}}" readonly>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="witadminApp.frontEndMessage.type">Type</span>
+                </td>
+                <td>
+                    <input type="text" class="input-sm form-control" value="{{frontEndMessage.type}}" readonly>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="witadminApp.frontEndMessage.hidden">Hidden</span>
+                </td>
+                <td>
+                    <input type="text" class="input-sm form-control" value="{{frontEndMessage.hidden}}" readonly>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="witadminApp.frontEndMessage.unavailable">Unavailable</span>
+                </td>
+                <td>
+                    <input type="text" class="input-sm form-control" value="{{frontEndMessage.unavailable}}" readonly>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="witadminApp.frontEndMessage.start">Start</span>
+                </td>
+                <td>
+                    <input type="text" class="input-sm form-control" value="{{frontEndMessage.start}}" readonly>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="witadminApp.frontEndMessage.end">End</span>
+                </td>
+                <td>
+                    <input type="text" class="input-sm form-control" value="{{frontEndMessage.end}}" readonly>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="witadminApp.frontEndMessage.creation">Creation</span>
+                </td>
+                <td>
+                    <input type="text" class="input-sm form-control" value="{{frontEndMessage.creation}}" readonly>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="witadminApp.frontEndMessage.lastModification">LastModification</span>
+                </td>
+                <td>
+                    <input type="text" class="input-sm form-control" value="{{frontEndMessage.lastModification}}" readonly>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            ui-sref="frontEndMessage"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

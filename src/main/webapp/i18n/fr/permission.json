@@ -1,0 +1,20 @@
+{
+    "witadminApp": {
+        "permission" : {
+            "home": {
+                "title": "Permissions",
+                "createLabel": "Créer un nouveau Permission",
+                "createOrEditLabel": "Créer ou éditer un Permission"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Permission {{ id }} ?"
+            },
+            "detail": {
+                "title": "Permission"
+            },
+            "name": "Name",
+            "description": "Description"
+        }
+    }
+}
+

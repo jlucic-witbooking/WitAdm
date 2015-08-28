@@ -1,0 +1,22 @@
+{
+    "witadminApp": {
+        "userGroup" : {
+            "home": {
+                "title": "UserGroups",
+                "createLabel": "Create a new UserGroup",
+                "createOrEditLabel": "Create or edit a UserGroup"
+            },
+            "created": "A new UserGroup is created with identifier {{ param }}",
+            "updated": "A UserGroup is updated with identifier {{ param }}",
+            "deleted": "A UserGroup is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete UserGroup {{ id }}?"
+            },
+            "detail": {
+                "title": "UserGroup"
+            },
+            "name": "Name",
+            "user": "user"
+        }
+    }
+}
